@@ -1,0 +1,28 @@
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  
+    .category-cell {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  
+    .value-cell {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .species-col,
+  .training-col {
+    display: flex;
+    align-items: unset;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  }
