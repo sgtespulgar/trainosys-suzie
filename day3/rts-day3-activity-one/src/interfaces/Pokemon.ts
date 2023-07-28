@@ -9,6 +9,6 @@ export interface Pokemon {
     description ?: string;
   }
 
-export interface PokemonProps {
-  pokemon : Pokemon
+export type PokemonProps = {
+    pokemonData: Pokemon
 }

@@ -1,28 +1,29 @@
-import { Link } from "react-router-dom";
 import { Fragment } from "react";
-import { TYPE_COLOR, COLOR, capitalize } from "../../utils/utils"
+import { COLOR, capitalize } from "../../utils/utils"
 import '../../assets/pokedexView.css'
-import { Pokemon } from "../../interfaces/Pokemon";
+import { PokemonProps } from "../../interfaces/Pokemon";
 
-const PokemonCardComponent : React.FC<Pokemon> = ({pokemonData}) =>  {
-    const { name, height, id,img, types, color } = pokemonData;
+const PokemonCardComponent : React.FC<PokemonProps> = (props : PokemonProps) =>  {
+   // const { name, height, id,img, types, color } = pokemonData;
 
+   console.log(JSON.stringify(props))
     return(
         <div>
-                <b>#{id}  {capitalize(name)}</b>
+                <b>#{props.pokemonData.id}  {capitalize(props.pokemonData.name)}</b>
                     
                 <div className="pokemon-image-container"
-                    style={{ background: COLOR.LINEAR_GRAD(types[0]) }} >
-                    <img src={img} alt="" height="250px"/>
+                    style={{ background: COLOR.LINEAR_GRAD(props.pokemonData.types[0]) }} 
+                    >
+                    <img src={props.pokemonData.img} alt="" height="250px"/>
                     
                 </div>
                 <div className="types">
                     {
-                    types.map((name, index) =>( 
+                    props.pokemonData.types.map((name, index) =>( 
                     //types.map(({ type }, index) => (
                     <Fragment key={name}>
                         <small style={{ color: COLOR.TYPE(name) }}> {name} </small>
-                        {index !== types.length - 1 && (
+                        {index !== props.pokemonData.types.length - 1 && (
                         <span style={{ color: "#000" }} key={`separator-${name}`}>
                             {" | "}
                         </span>

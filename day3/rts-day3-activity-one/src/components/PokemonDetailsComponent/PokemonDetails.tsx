@@ -1,14 +1,14 @@
 import {useState, useEffect, Fragment} from 'react'
 import { useLocation } from "react-router-dom";
 import { COLOR } from "../../utils/utils"
-import { Pokemon } from '../../interfaces/Pokemon'
+import { Pokemon, PokemonProps } from '../../interfaces/Pokemon'
 
 import axios from 'axios'
 import './PokemonDetails.css'
 import { SpinnerComponent } from "../Spinner/SpinnerComponent";
 import PokemonCardComponent from "../PokemonCardComponent/PokemonCard";
 
-const PokemonDetailsComponent : React.FC = pokemonData =>  {
+const PokemonDetailsComponent : React.FC = () =>  {
     const location = useLocation();
     const { name } = location.state;
 
